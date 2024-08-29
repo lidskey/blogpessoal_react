@@ -78,8 +78,7 @@ function Cadastro() {
     setIsLoading(false)
   }
     
-  console.log(usuario)
-  console.log(confirmaSenha)
+
 
   return (
     <>

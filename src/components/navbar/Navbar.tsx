@@ -24,10 +24,10 @@ function Navbar() {
                 
                 <ul className="flex *:px-1" >
 
-                        <li>Postagens</li>
-                        <li>Tema</li>
-                        <li>Cadastrar tema</li>
-                    <li>Perfil</li>
+                        <li className="hover:underline">Postagens</li>
+                    <li> <Link to='/temas' className='hover:underline'>Tema</Link></li>
+                    <li><Link to='/cadastrartema' className='hover:underline'>Cadastrar tema</Link></li>
+                    <li className="hover:underline">Perfil</li>
                     <Link to= '' onClick={logout} className="hover:underline">
                         <li>Sair</li>
                     </Link>
