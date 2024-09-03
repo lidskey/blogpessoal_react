@@ -4,6 +4,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import Tema from '../../../models/Tema';
 import { atualizar, buscar, cadastrar } from '../../../services/Service';
 import { RotatingLines } from 'react-loader-spinner';
+import { ToastAlerta } from '../../../utils/ToastAlerta';
 
 function FormularioTema() {
 
@@ -11,30 +12,30 @@ function FormularioTema() {
 
     let navigate = useNavigate();
 
-    
+
     const [isLoading, setIsLoading] = useState<boolean>(false)
-    
+
 
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
 
     const { id } = useParams<{ id: string }>()
-        
-        async function buscarPorId(id: string) {
-            try {
-                await buscar(`/temas/${id}`, setTema, {
-                    headers: { Authorization: token }
-                })
-            } catch (error: any) {
-                if (error.toString().includes('401')) {
-                    handleLogout()
-                }
+
+    async function buscarPorId(id: string) {
+        try {
+            await buscar(`/temas/${id}`, setTema, {
+                headers: { Authorization: token }
+            })
+        } catch (error: any) {
+            if (error.toString().includes('401')) {
+                handleLogout()
             }
         }
+    }
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado!')
+            ToastAlerta('Você precisa estar logado!', 'info')
             navigate('/')
         }
     }, [token])
@@ -68,12 +69,12 @@ function FormularioTema() {
                 await atualizar(`/temas`, tema, setTema, {
                     headers: { 'Authorization': token }
                 });
-                alert('Tema atualizado com sucesso!');
+                ToastAlerta('Tema atualizado com sucesso!', 'sucesso');
             } catch (error: any) {
                 if (error.toString().includes('401')) {
                     handleLogout()
                 } else {
-                    alert('Erro ao atualizar o Tema!')
+                    ToastAlerta('Erro ao atualizar o Tema!', 'erro')
                 }
             }
 
@@ -85,7 +86,7 @@ function FormularioTema() {
                     headers: { 'Authorization': token }
                 });
 
-                alert('Tema cadastrado com sucesso!');
+                ToastAlerta('Tema cadastrado com sucesso!', 'sucesso');
             } catch (error: any) {
 
                 if (error.toString().includes('401')) {
@@ -93,7 +94,7 @@ function FormularioTema() {
 
                 } else {
 
-                    alert('Erro ao cadastrar o Tema!')
+                    ToastAlerta('Erro ao cadastrar o Tema!','erro')
                 }
             }
 
@@ -128,15 +129,15 @@ function FormularioTema() {
                 <button
                     className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto block"
                     type="submit">
-                    
+
                     {isLoading ? <RotatingLines
-                    strokeColor="white"
-                    strokeWidth="5"
-                    animationDuration="0.75"
-                    width="24"
-                    visible={true}
-                /> :
-                    <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
+                        strokeColor="white"
+                        strokeWidth="5"
+                        animationDuration="0.75"
+                        width="24"
+                        visible={true}
+                    /> :
+                        <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
                     }
                 </button>
             </form>
