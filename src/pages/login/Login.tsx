@@ -81,7 +81,10 @@ function Login() {
 
                     </p>
                 </form>
-                <div className="fundoLogin hidden lg:block"></div>
+                <div className="fundoLogin hidden lg:block">
+                    <img className='w-full h-150 object-cover border-b-8 border-white'
+                        src="https://ik.imagekit.io/lidskey/Connected%20world-amico.svg?updatedAt=1725475093377" alt="Login Blog" />
+                </div>
             </div>
         </>
     );

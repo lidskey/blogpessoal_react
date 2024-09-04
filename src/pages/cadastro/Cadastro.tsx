@@ -84,7 +84,8 @@ function Cadastro() {
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
-        <div className="lg:block hidden fundoCadastro"></div>
+        <div className="lg:block hidden fundoCadastro"> <img className='w-full h-150 object-cover border-b-8 border-white'
+          src="https://ik.imagekit.io/lidskey/Connected%20world-amico.svg?updatedAt=1725475093377" alt="Login Blog" /></div>
 
 
         <form onSubmit={cadastrarNovoUsuario} className='flex justify-center items-center flex-col w-2/3 gap-3' >
