@@ -82,7 +82,7 @@ function FormularioTema() {
 
             try {
 
-                await cadastrar(`/temas/cadastrar`, tema, setTema, {
+                await cadastrar(`/temas`, tema, setTema, {
                     headers: { 'Authorization': token }
                 });
 
@@ -127,7 +127,7 @@ function FormularioTema() {
                     />
                 </div>
                 <button
-                    className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto block"
+                    className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto block flex justify-center"
                     type="submit">
 
                     {isLoading ? <RotatingLines

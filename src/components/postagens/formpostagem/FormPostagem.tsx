@@ -76,7 +76,7 @@ function FormPostagem() {
     useEffect(() => {
         setPostagem({
             ...postagem,
-            descricao: tema,
+            tema: tema,
         })
     }, [tema])
 
@@ -84,7 +84,7 @@ function FormPostagem() {
         setPostagem({
             ...postagem,
             [e.target.name]: e.target.value,
-            descricao: tema,
+            tema: tema,
             usuario: usuario,
         });
     }
@@ -139,6 +139,7 @@ function FormPostagem() {
     }
 
     const carregandoTema = tema.descricao === '';
+    console.log(JSON.stringify(postagem))
 
     return (
         <div className="flex flex-col items-center mx-auto container">

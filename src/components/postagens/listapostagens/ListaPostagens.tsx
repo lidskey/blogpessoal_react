@@ -11,10 +11,10 @@ function ListaPostagens() {
 
     const navigate = useNavigate();
 
+    const { usuario, handleLogout } = useContext(AuthContext)
+    const token = usuario.token
     const [postagens, setPostagens] = useState<Postagem[]>([]);
 
-    const { usuario, handleLogout } = useContext(AuthContext);
-    const token = usuario.token;
 
     async function buscarPostagens() {
         try {
