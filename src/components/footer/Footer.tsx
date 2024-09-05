@@ -16,8 +16,8 @@ function Footer() {
 
             <div className="bg-indigo-900 flex justify-center text-white py-8 text-center">
                 <div className="text-xl-3">
-                    <p className="font-bold">Blog Pessoal Generation | Copyright: {data}</p>
-                    <p className="font-thin">Acesse nossas redes sociais</p>
+                    <p className="font-bold">Desenvolvido por Liara Cristina{data}</p>
+                    <p className="font-thin">Acesse minhas redes sociais</p>
 
                     <div className="flex justify-center gap-2">
                         <a href="https://github.com/lidskey" aria-label="Github" rel="noopener">
