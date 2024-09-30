@@ -189,7 +189,7 @@ function FormPostagem() {
                 </div>
                 <button
                     type='submit'
-                    className='flex justify-center bg-indigo-400 hover:bg-indigo-800 disabled:bg-slate-200 mx-auto py-2 rounded w-1/2 font-bold text-white'
+                    className='flex justify-center bg-yellow-500 hover:bg-slate-900 disabled:bg-slate-200 mx-auto py-2 rounded w-1/2 font-bold text-white'
                     disabled={carregandoTema}
                 >
                     {isLoading ?

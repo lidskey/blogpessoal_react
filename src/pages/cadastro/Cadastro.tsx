@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { cadastrarUsuario } from '../../services/Service.ts';
 import { RotatingLines } from 'react-loader-spinner';
 import { ToastAlerta } from '../../utils/ToastAlerta.ts';
+import PicCredits from '../../components/credits/PicCredits.tsx';
 
 function Cadastro() {
   //hook useNavigate para redirecionar rotas
@@ -84,12 +85,20 @@ function Cadastro() {
   return (
     <>
       <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
-        <div className="lg:block hidden fundoCadastro"> <img className='w-full h-150 object-cover border-b-8 border-white'
-          src="https://ik.imagekit.io/lidskey/Connected%20world-amico.svg?updatedAt=1725475093377" alt="Login Blog" /></div>
+        <div className="lg:block hidden fundoCadastro">
+          {" "}
+          <img
+            className="w-full object-cover border-2 border-slate-900"
+            src="https://ik.imagekit.io/lidskey/maos-com-laptop-na-mesa-de-madeira-no-cafe-cafe_53876-16124.jpg_t=st=1727725375~exp=1727728975~hmac=60f1cf08917e4dd8e8e54b2d95eb825569f1a5489a97bb9334aff92fe53c151d&w=740?updatedAt=1727725469185"
+            alt="Login Blog"
+          />
+        </div>
 
-
-        <form onSubmit={cadastrarNovoUsuario} className='flex justify-center items-center flex-col w-2/3 gap-3' >
-          <h2 className='text-slate-900 text-5xl'>Cadastrar</h2>
+        <form
+          onSubmit={cadastrarNovoUsuario}
+          className="flex justify-center items-center flex-col w-2/3 gap-3"
+        >
+          <h2 className="text-slate-900 text-5xl">Cadastrar</h2>
 
           <div className="flex flex-col w-full">
             <label htmlFor="nome">Nome</label>
@@ -100,8 +109,9 @@ function Cadastro() {
               placeholder="Nome"
               className="border-2 border-slate-700 rounded p-2"
               value={usuario.nome}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                atualizarEstado(e)
+              }
             />
           </div>
           <div className="flex flex-col w-full">
@@ -113,11 +123,13 @@ function Cadastro() {
               placeholder="Usuario"
               className="border-2 border-slate-700 rounded p-2"
               value={usuario.usuario}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                atualizarEstado(e)
+              }
             />
           </div>
           <div className="flex flex-col w-full">
-            <label htmlFor="foto">Foto</label>
+            <label htmlFor="foto">Url da foto</label>
             <input
               type="text"
               id="foto"
@@ -125,7 +137,9 @@ function Cadastro() {
               placeholder="Foto"
               className="border-2 border-slate-700 rounded p-2"
               value={usuario.foto}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                atualizarEstado(e)
+              }
             />
           </div>
           <div className="flex flex-col w-full">
@@ -137,7 +151,9 @@ function Cadastro() {
               placeholder="Senha"
               className="border-2 border-slate-700 rounded p-2"
               value={usuario.senha}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                atualizarEstado(e)
+              }
             />
           </div>
           <div className="flex flex-col w-full">
@@ -149,24 +165,41 @@ function Cadastro() {
               placeholder="Confirmar Senha"
               className="border-2 border-slate-700 rounded p-2"
               value={confirmaSenha}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                handleConfirmarSenha(e)
+              }
             />
-
           </div>
           <div className="flex justify-around w-full gap-8">
-            <button className='rounded text-white bg-red-400 hover:bg-red-700 w-1/2 py-2' onClick={retornar} >
+            <button
+              className="rounded text-white bg-slate-900 hover:bg-yellow-500 w-1/2 py-2"
+              onClick={retornar}
+            >
               Cancelar
             </button>
-            
-            <button className='rounded text-white bg-indigo-400 hover:bg-indigo-900 w-1/2 py-2 flex justify-center' type='submit' >
-              {isLoading ? <RotatingLines strokeColor="white" strokeWidth="5" animationDuration="0.75" width="24" visible={true} /> :
-                <span>Cadastrar</span>}
+
+            <button
+              className="rounded text-white bg-slate-900 hover:bg-yellow-500 w-1/2 py-2 flex justify-center"
+              type="submit"
+            >
+              {isLoading ? (
+                <RotatingLines
+                  strokeColor="white"
+                  strokeWidth="5"
+                  animationDuration="0.75"
+                  width="24"
+                  visible={true}
+                />
+              ) : (
+                <span>Cadastrar</span>
+              )}
             </button>
           </div>
         </form>
       </div>
+      <PicCredits />
     </>
-  )
+  );
 }
 
 export default Cadastro
