@@ -1,50 +1,36 @@
-# React + TypeScript + Vite
+# Projeto Blog Pessoal - Frontend
+Este é o repositório do frontend do projeto Blog Pessoal, desenvolvido durante o Bloco 2 do Bootcamp da Generation Brasil. O projeto foi implementado utilizando React para a interface de usuário, Axios para requisições HTTP, Vite como ferramenta de build, e Tailwind CSS para estilização. O deploy foi realizado utilizando a plataforma Vercel.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descrição
+Este frontend conecta-se com a API de backend para exibir e gerenciar postagens de um blog pessoal. Com uma interface simples e responsiva, os usuários podem visualizar, criar, editar e excluir postagens. A autenticação é gerenciada via JWT, integrando-se à lógica de autenticação e autorização do backend.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas
+- React: Biblioteca JavaScript para construção de interfaces de usuário.
+- Axios: Cliente HTTP baseado em Promises para comunicação com a API.
+- Vite: Ferramenta de build rápida e leve para desenvolvimento em React.
+- Tailwind CSS: Framework de utilitários para estilização rápida e responsiva.
+- Vercel: Plataforma de deploy contínuo para projetos frontend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  ##  Instalação e Execução
+  - Clone este repositório:
+  
+<code>git clone https://github.com/seu-usuario/blog-pessoal-frontend.git</code>
+<code>cd blog-pessoal-frontend</code>
+<code>yarn install</code>
+<code>yarn dev</code>
+- Abra o navegador e acesse:
+<code>http://localhost:4000</code>
 
-## Expanding the ESLint configuration
+## Funcionalidades
+- Visualização de postagens do blog
+- Criação, edição e exclusão de postagens
+- Autenticação e autorização com JWT
+- Interface responsiva e amigável para dispositivos móveis
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+ ## Deploy na Vercel
+- O deploy contínuo foi realizado na Vercel, que permite uma integração simples com repositórios Git e facilita o processo de atualização da aplicação frontend.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+ 
+###Backend
+- Confira o backend:
+https://github.com/lidskey/blogpessoal_nest
