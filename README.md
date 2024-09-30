@@ -31,6 +31,6 @@ Este frontend conecta-se com a API de backend para exibir e gerenciar postagens 
 - O deploy contínuo foi realizado na Vercel, que permite uma integração simples com repositórios Git e facilita o processo de atualização da aplicação frontend.
 
  
-##Backend
+## Backend
 - Confira o backend:
 https://github.com/lidskey/blogpessoal_nest
