@@ -16,7 +16,7 @@ Este frontend conecta-se com a API de backend para exibir e gerenciar postagens 
   
 - <code>git clone https://github.com/seu-usuario/blog-pessoal-frontend.git</code>
 - <code>cd blog-pessoal-frontend</code>
-- <code>yarn install</code>
+- <code>yarn</code>
 - <code>yarn dev</code>
 - Abra o navegador e acesse:
 <code>http://localhost:4000</code>
